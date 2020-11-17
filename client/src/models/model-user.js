@@ -125,7 +125,6 @@ ModelUser.addToSchedule = async function (
         Service,
       }), // <-- object uses ES6 syntax.
     };
-    const reply = await fetch(endpoint, payload);
   } catch (e) {
     console.error(`From ModelUser.addToSchedule --> ${e}`);
   }
@@ -457,7 +456,6 @@ ModelUser.getCoursesforCheckbox = function () {
 ModelUser.getUserBookings = async function (sid) {
   const endpoint = `${config.api}/users/bookings`;
   const payload = { method: "GET" };
-  const reply = await fetch(endpoint, payload);
 };
 
 ModelUser.getSid = async function (firstName, lastName) {
