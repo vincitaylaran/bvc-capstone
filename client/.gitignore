@@ -24,3 +24,6 @@ yarn-error.log*
 
 # sample data
 dummy-data
+
+# config
+config.json
