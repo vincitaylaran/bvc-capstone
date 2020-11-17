@@ -105,11 +105,6 @@ ModelUser.addToSchedule = async function (
   services
 ) {
   try {
-    this.courses.forEach((element) => {
-      if (element.state) {
-        let Service = element.code;
-      }
-    });
   } catch (e) {
     console.error(`From ModelUser.addToSchedule --> ${e}`);
   }
