@@ -105,11 +105,10 @@ ModelUser.addToSchedule = async function (
   services
 ) {
   try {
-    const token = localStorage.getItem("asc_authtoken");
-    let Service = "";
-
     this.courses.forEach((element) => {
-      if (element.state) Service = element.code;
+      if (element.state) {
+        let Service = element.code;
+      }
     });
   } catch (e) {
     console.error(`From ModelUser.addToSchedule --> ${e}`);
