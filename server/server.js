@@ -7,6 +7,10 @@ const port = process.env.PORT || 5000
 
 var app = express()
 
+app.get("/", (req, res) => {
+  res.send("Hello from Express!")
+})
+
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*") // update to match the domain you will make the request from
   res.header(
