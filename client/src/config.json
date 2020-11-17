@@ -1,6 +1,6 @@
 {
     "app_title": "Learner Success Services",
     "authkey": "asc_authtoken",
-    "api":"https://bvc-capstone.herokuapp.com/",
+    "api":"https://bvc-capstone.herokuapp.com",
     "waitlist_time": 20000
 }
