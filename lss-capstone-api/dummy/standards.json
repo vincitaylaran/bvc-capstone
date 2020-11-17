@@ -1,0 +1,115 @@
+[
+    {
+        "table": "users",
+        "schema": {
+            "_id": { "type": "Number" },
+            "sid": { "type": "String" },
+            "email": { "type": "String" },
+            "firstname": { "type": "String" },
+            "lastname": { "type": "String" },
+            "nickname": { "type": "String" },
+            "phone": { "type": "String", "required": "Boolean" },
+            "roles": { "type": ["Number"] },
+            "schedule": { "type": ["Schedule"] }
+        }
+    },
+    {
+        "table": "roles",
+        "schema": {
+            "_id": { "type": "Number" },
+            "sid": { "type": "String" },
+            "desc": { "type": "String" },
+            "services": { "type": ["Number"] }
+        }
+    },
+    {
+        "table": "services",
+        "schema": {
+            "_id": "integer",
+            "sid": "string",
+            "desc": "string",
+            "colour": "string",
+            "booking_type": "string (walk-in, appointment, both)",
+            "fields": [
+                {
+                    "code": "Name",
+                    "description": "First/Last Name",
+                    "required": true,
+                    "type": "text",
+                    "length": 0,
+                    "default": true,
+                    "enabled": true
+                }
+            ],
+            "sched": [
+                {
+                    "booking_type": "appointment",
+                    "day_of_week": "integer (Moment: 0 - Monday, 6 - Sunday)",
+                    "time_start": "datetime (Moment)",
+                    "time_end": "datetime (Moment)",
+                    "appt_duration": "30 (Moment: unit in minutes)"
+                },
+                {
+                    "booking_type": "walk-in",
+                    "day_of_week": "integer (Moment: 0 - Monday, 6 - Sunday)",
+                    "time_start": "datetime (Moment)",
+                    "time_end": "datetime (Moment)",
+                    "appt_duration": "30 (Moment: unit in minutes)"
+                }
+            ]
+        }
+    },
+    {
+        "table": "password",
+        "schema": [
+            {
+                "tokens": "jwt tokens"
+            }
+        ]
+    },
+    {
+        "table": "authorization token (this is not a table)",
+        "schema": [
+            {
+                "sub": "admin.asc@mybvc.ca",
+                "nam": "Asc Admin",
+                "prv": ["lst", "dbd", "rpt", "svc", "rol", "usr", "adm"],
+                "svc": ["CTTutor", "PNTutor", "Reboot", "ELL"],
+                "iat": "Number (milliseconds)"
+            }
+        ]
+    },
+    {
+        "table": "reset token (this is not a table)",
+        "schema": [
+            {
+                "sub": "",
+                "iat": "Number (milliseconds)"
+            }
+        ]
+    },
+    {
+        "table": "bookings",
+        "schema": {
+            "_id": { "type": "String" },
+            "service_sid": { "type": "Number" },
+            "tutor_id": { "type": "String" },
+            "booking_type": { "type": "String" },
+            "fname": { "type": "String" },
+            "lname": { "type": "String" },
+            "email": { "type": "String" },
+            "phone": { "type": "String" },
+            "start": { "type": "String" },
+            "end": { "type": "String" },
+            "status": { "type": "String" }
+        }
+    },
+    {
+        "table": "defaults",
+        "schema": ""
+    },
+    {
+        "table": "audit",
+        "schema": ""
+    }
+]

@@ -1,0 +1,17 @@
+{
+  "ServiceRoot": "localhost:54321",
+  "Port": 54321,
+  "LoginSecret": "ASC/LSS Authorization Token Secret KEY 1234567890",
+  "ForgotSecret": "ASC/LSS Forgot Password Secret KEY 1234567890",
+  "InviteSecret": "ASC/LSS Invite User Secret KEY 1234567890",
+  "DeleteBookingSecret": "ASC/LSS Delete a booking in the waitlist KEY 1234567890",
+  "SaltRounds": 10,
+  "EmailService": null,
+  "MongoDbAtlasDatabaseHost": "mongodb+srv://",
+  "MongoDbAtlasUsername": "lssDeveloper",
+  "MongoDbAtlasPassword": "developer123",
+  "MongoDbAtlasDatabaseServer": "@lss-cluster-zk9jl.mongodb.net/",
+  "MongoDbAtlasDatabaseName": "lss",
+  "MongoDbAtlasQueryString": "?retryWrites=true&w=majority",
+  "MongoConnection": "mongodb+srv://lssUser:H57MIiKpfog7Eqm9@lss-unfva.mongodb.net/lss?retryWrites=true&w=majority"
+}

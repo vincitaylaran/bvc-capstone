@@ -1,0 +1,91 @@
+/*********************
+*   menu-header.css
+*********************/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0px;
+    z-index: 999;
+    transition: margin-left 1s ease, width 1s ease;
+}
+
+.header + .page {
+    padding-top: 150px !important;
+    padding-left: 50px !important;
+}
+
+.header-drawer-open {
+    margin-left: 200px;
+    width: calc(100% - 200px) !important;
+}
+
+.header-drawer-min {
+    margin-left: 50px;
+    width: calc(100% - 50px) !important;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 70px;
+    background-color: rgba(0, 78, 149, 1);
+    color: white;
+}
+
+.header-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+
+    height: 55px;
+    background-color: rgba(220, 220, 220, 1);    
+}
+
+.header-page-centered {
+    justify-content: center !important;
+}
+
+.header-menu-vertical {
+    height: 55px;
+    display: flex;
+}
+
+.header-menu {
+    width: 300px;
+    height: 55px;
+}
+
+.header-menu-content {
+    height: 55px;
+    background-color: rgba(220, 220, 220, 1);
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    overflow-y: hidden;
+    transition: height 0.5s ease;
+}
+
+.header-menu-open-2 {
+    height: 175px !important;
+}
+
+.header-menu-open-3 {
+    height: 235px !important;
+}
+
+.header-menu-open-4 {
+    height: 295px !important;
+}
+
+
+.header-menu-head {
+    height: 55px;
+    display: flex;
+    align-items: center;  
+}
+

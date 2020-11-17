@@ -1,0 +1,102 @@
+[
+    {
+        "success":true, 
+        "status":"No Schedule Today",
+        "code":"CTTutor",
+        "desc":"Creative Technology Tutorials",
+        "schedule":["Tuesday 10:00 to 12:00","Thursday 10:00 to 12:00"],
+        "list":[]
+    },
+    {
+        "success":true,
+        "status":"success",
+        "code":"ELL",
+        "desc":"English Language Learning",
+        "schedule":["Monday 10:00 to 15:00","Tuesday 10:00 to 15:00","Wednesday 10:00 to 15:00","Thursday 10:00 to 15:00","Friday 10:00 to 15:00"],
+        "list":[
+            {
+                "name":"John L",
+                "queue":1,
+                "status":"Ongoing"
+            },
+            {
+                "name":"Paul M",
+                "queue":2,
+                "status":"Waiting..."
+            },
+            {
+                "name":"George H",
+                "queue":3,
+                "status":"Waiting..."
+            },
+            {
+                "name":"Ringo S",
+                "queue":4,
+                "status":"Waiting..."
+            }
+        ]
+    },
+    {
+        "success":true,
+        "status":"success",
+        "code":"PNTutor",
+        "desc":"Practical Nursing",
+        "schedule":["Monday 7:00 to 9:00","Wednesday 7:00 to 9:00"],
+        "list":[
+            {
+                "name":"Freddie M",
+                "queue":1,
+                "status":"Waiting..."
+            },
+            {
+                "name":"Bryan M",
+                "queue":2,
+                "status":"Waiting..."
+            },
+            {
+                "name":"Roger T",
+                "queue":3,
+                "status":"Waiting..."
+            },
+            {
+                "name":"John D",
+                "queue":4,
+                "status":"Waiting..."
+            }
+        ]
+    },
+    {
+        "success":true,
+        "status":"success",
+        "code":"Reboot",
+        "desc":"Reboot",
+        "schedule":["Monday 10:00 to 12:00","Tuesday 10:00 to 13:00", "Wednesday 10:00 to 14:00", "Thursday 10:00 to 12:00", "Friday 12:00 to 2:00"],
+        "list":[
+            {
+                "name":"Nick C",
+                "queue":1,
+                "status":"Ongoing"
+            },
+            {
+                "name":"AJ M",
+                "queue":2,
+                "status":"Waiting..."
+            },
+            {
+                "name":"Howie D",
+                "queue":3,
+                "status":"Waiting..."
+            },
+            {
+                "name":"Kevin R",
+                "queue":4,
+                "status":"Waiting..."
+            },
+            {
+                "name":"Brian L",
+                "queue":5,
+                "status":"Waiting..."
+            }
+        ]
+    }
+]

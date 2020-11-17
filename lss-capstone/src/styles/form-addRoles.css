@@ -1,0 +1,18 @@
+.role-base-form > .section {
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.role-base-form > .role-title {
+  width: 50% !important;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.role-base-form > .section .role-input {
+  display: flex;
+  width: 270px;
+  height: 60px;
+  justify-content: flex-start;
+  justify-items: center;
+}

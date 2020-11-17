@@ -1,0 +1,67 @@
+.dialog-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+.dialog-flex-item {
+    width: 300px;
+    height: 100%;
+    flex-grow: 1;
+}
+
+.dialog-input-container {
+    margin: 1rem 0.5rem;
+    padding: 0;
+}
+
+.dialog-input-container > div {
+    display: flex;
+}
+
+.dialog-title {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dialog-closeIcon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: grey;
+}
+
+.dialog-grid-container {
+    height: 200px;
+    margin: 10px 0;
+    overflow-y: scroll;
+}
+
+.dialog-paper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    padding: 0px 0px 0px 5px;
+}
+
+.progress-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0, 0.25);
+}
+
+.progress-close {
+    display: none;
+}

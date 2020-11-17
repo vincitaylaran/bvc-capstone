@@ -1,0 +1,46 @@
+[{
+    "code": "Name",
+    "description": "First/Last Name",
+    "required": true,
+    "type": "text",
+    "length": 0,
+    "default": true,
+    "enabled": true,
+    "selections": ""    
+}, {
+    "code": "ID",
+    "description": "Student Id",
+    "required": true,
+    "type": "number",
+    "length": 6,
+    "default": true,
+    "enabled": true,
+    "selections": ""    
+}, {
+    "code": "Phone",
+    "description": "Phone",
+    "required": false,
+    "type": "phone",
+    "length": 15,
+    "default": true,
+    "enabled": true,
+    "selections": ""    
+}, {
+    "code": "Email",
+    "description": "Email Address",
+    "required": true,
+    "type": "email",
+    "length": 0,
+    "default": true,
+    "enabled": true,
+    "selections": ""    
+}, {
+    "code": "Notes",
+    "description": "Notes",
+    "required": false,
+    "type": "multitext",
+    "length": "0",
+    "default": true,
+    "enabled": true,
+    "selections": ""
+}]

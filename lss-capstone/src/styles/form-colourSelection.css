@@ -1,0 +1,100 @@
+.colour-component-container {
+  max-width: 100%; /* Matches parent width. */
+  padding: 15px;
+
+  text-align: center;
+  background-color: #eeeeee;
+  border-radius: 4px;
+}
+.colour-component-container h4 {
+  margin-top: 0;
+}
+
+.colour-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.colour-container .colour-button {
+  width: 50px;
+  height: 50px;
+  margin: 0.5px;
+
+  cursor: pointer;
+  border: 1px solid #eee;
+
+  border-radius: 4px;
+}
+.colour-container .colour-button:hover {
+  border: 1px solid darkblue;
+}
+
+.selected-colour {
+  border: 1px solid navy !important;
+}
+
+.display-selection {
+  padding: 15px 0.5px 0;
+}
+.display-selection .selection {
+  height: 50px;
+
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+/* COLOURS: */
+#default {
+  background-color: black;
+}
+#lovely-blue {
+  background-color: #2196f3;
+}
+
+#cool-pink {
+  background-color: #ff3366;
+}
+#deep-lavender {
+  background-color: #693668;
+}
+#golly-purple {
+  background-color: #791e94;
+}
+#navy {
+  background-color: #00487c;
+}
+#oceania {
+  background-color: #2ec4b6;
+}
+#deep-purple {
+  background-color: #a01a7d;
+}
+#fresh-lavender {
+  background-color: #cbbaed;
+}
+#sunflower {
+  background-color: #ffd23f;
+}
+#lush {
+  background-color: #00cc66;
+}
+#lorange {
+  background-color: #f79a03;
+}
+#pumpkin-pie {
+  background-color: #f75c03;
+}
+#brighter-red {
+  background-color: #f73025;
+}
+#almost-maroon {
+  background-color: #c32f27;
+}
+#sky {
+  background-color: #35baf6;
+}
+#bubblegum {
+  background-color: #ff6dc0;
+}

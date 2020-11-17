@@ -1,0 +1,727 @@
+[
+    {
+        "_id": 1,
+        "sid": "CTTutor",
+        "desc": "Creative Technologies",
+        "colour": "almost-maroon",
+        "booking_type": ["walk-in"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "required": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "tes1e4v8ua3i",
+                "description": "test3asdadsadasdsa",
+                "required": false,
+                "type": "text",
+                "length": "0",
+                "default": false,
+                "enabled": true,
+                "selections": ""
+            }
+        ]
+    },
+    {
+        "_id": 2,
+        "sid": "PNTutor",
+        "desc": "Practical Nursing",
+        "colour": "lorange",
+        "booking_type": ["walk-in"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "required": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "_id": 3,
+        "sid": "Reboot",
+        "desc": "Reboot",
+        "colour": "bubblegum",
+        "booking_type": ["appointment"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "required": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "_id": 4,
+        "sid": "ELL",
+        "desc": "English Language Learning",
+        "colour": "sunflower",
+        "booking_type": ["appointment"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "required": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "_id": 5,
+        "sid": "DSTSE6TsMvBs",
+        "desc": "Dylan's Tutoring Services",
+        "colour": "lovely-blue",
+        "booking_type": ["appointment", "walk-in"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "required": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "desc": "Manny",
+        "sid": "test2",
+        "colour": "lovely-blue",
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "mandatory": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ],
+        "booking_type": "[\"walk-in\",\"appointment\"]"
+    },
+    {
+        "sid": "Manny2",
+        "desc": "Manny2",
+        "colour": "lush",
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "mandatory": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "sid": "Coool",
+        "desc": "Coool",
+        "colour": "oceania",
+        "booking_type": ["walk-in"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "mandatory": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "sid": "colourWorking",
+        "desc": "Is Colour Working",
+        "colour": "deep-purple",
+        "booking_type": ["walk-in"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "mandatory": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "sid": "bookingtypes",
+        "desc": "Are bookingTypes working",
+        "colour": "lush",
+        "booking_type": ["walk-in", "appointment"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "mandatory": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "sid": "broke",
+        "desc": "Broke colours",
+        "colour": "lovely-blue",
+        "booking_type": ["walk-in"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "mandatory": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "sid": "test",
+        "desc": "testing test",
+        "colour": "bubblegum",
+        "booking_type": ["walk-in", "appointment"],
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "mandatory": false,
+                "type": "multitext",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            }
+        ]
+    },
+    {
+        "sid": "gew",
+        "desc": "hwe",
+        "colour": "undefined",
+        "booking_type": "walk-in,appointment",
+        "fields": [
+            {
+                "code": "Name",
+                "description": "First/Last Name",
+                "required": true,
+                "type": "text",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "ID",
+                "description": "Student Id",
+                "required": true,
+                "type": "number",
+                "length": 6,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Phone",
+                "description": "Phone",
+                "required": false,
+                "type": "phone",
+                "length": 15,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Email",
+                "description": "Email Address",
+                "required": true,
+                "type": "email",
+                "length": 0,
+                "default": true,
+                "enabled": true
+            },
+            {
+                "code": "Notes",
+                "description": "Notes",
+                "mandatory": false,
+                "type": "multitext",
+                "length": "0",
+                "default": true,
+                "enabled": true,
+                "required": false,
+                "selections": ""
+            },
+            {
+                "code": "TestDefault2",
+                "description": "default3",
+                "required": false,
+                "type": "text",
+                "length": "0",
+                "default": false,
+                "enabled": true,
+                "selections": ""
+            },
+            {
+                "code": "testign",
+                "description": "testui",
+                "required": false,
+                "type": "text",
+                "length": "0",
+                "default": false,
+                "enabled": true,
+                "selections": ""
+            }
+        ]
+    }
+]

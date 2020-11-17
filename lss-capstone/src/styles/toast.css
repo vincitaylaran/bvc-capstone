@@ -1,0 +1,12 @@
+.toast-base {
+  border-radius: 2px;
+}
+.toast-success {
+  background: #4caf50;
+}
+.toast-failure {
+  background: #f42b03;
+}
+.toast-warning {
+  background: #e89005;
+}

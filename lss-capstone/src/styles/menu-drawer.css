@@ -1,0 +1,30 @@
+/*********************
+*   menu-drawer.css
+*********************/
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 70px;
+}
+
+.drawer {
+    float: left;
+    position: fixed;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    height: 100vh;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    transition: width 1s ease;
+}
+
+.drawerOpen {
+    width: 200px;
+}
+
+.drawerClose {
+    width: 50px;
+}

@@ -1,0 +1,6 @@
+{
+    "app_title": "Learner Success Services",
+    "authkey": "asc_authtoken",
+    "api":"http://localhost:54321",
+    "waitlist_time": 20000
+}

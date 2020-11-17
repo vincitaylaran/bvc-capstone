@@ -1,0 +1,21 @@
+/*
+.custom-field-table {
+    border: 3px black solid;
+}
+*/
+
+.custom-field-table .row {
+    padding: 5px;
+}
+
+.custom-field-table .row > div > div {
+    display: inline-block;
+    margin: 3px;
+}
+
+.custom-field-table .row > div {
+    height: 100%;
+    margin: 5px 10px;
+    justify-content: center;
+    justify-items: center;
+}

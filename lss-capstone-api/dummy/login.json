@@ -1,0 +1,14 @@
+[
+    {
+        "sub":"admin.asc@mybvc.ca",
+        "nam":"Asc Admin",
+        "prv":["lst","brd","rpt","svc","rol","usr","adm"],
+        "svc": ["CTTutor","PNTutor","Reboot","ELL"]
+    },
+    {
+        "sub":"tutor.asc@mybvc.ca",
+        "nam":"Asc Tutor",
+        "prv":["lst","brd","rpt"],
+        "svc":["CTTutor"]
+    }
+]

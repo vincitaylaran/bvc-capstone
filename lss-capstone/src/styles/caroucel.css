@@ -1,0 +1,15 @@
+.container-box
+  {
+    display: flex;
+    width:100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+.box
+{
+  width: 270px;
+  height: 60px;
+  justify-content: start;
+  justify-items: center;
+}
