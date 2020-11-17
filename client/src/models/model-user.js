@@ -106,25 +106,11 @@ ModelUser.addToSchedule = async function (
 ) {
   try {
     const token = localStorage.getItem("asc_authtoken");
-    const endpoint = `${config.api}/schedule`;
     let Service = "";
 
     this.courses.forEach((element) => {
       if (element.state) Service = element.code;
     });
-
-    const payload = {
-      method: "POST",
-      headers: { "Content-Type": "application/json" }, // <-- required when making a PUT request.
-      body: JSON.stringify({
-        token,
-        userSid,
-        day,
-        startTime,
-        endTime,
-        Service,
-      }), // <-- object uses ES6 syntax.
-    };
   } catch (e) {
     console.error(`From ModelUser.addToSchedule --> ${e}`);
   }
@@ -453,10 +439,7 @@ ModelUser.getCoursesforCheckbox = function () {
   return this.courses;
 };
 
-ModelUser.getUserBookings = async function (sid) {
-  const endpoint = `${config.api}/users/bookings`;
-  const payload = { method: "GET" };
-};
+ModelUser.getUserBookings = async function (sid) {};
 
 ModelUser.getSid = async function (firstName, lastName) {
   if (firstName && lastName) {
