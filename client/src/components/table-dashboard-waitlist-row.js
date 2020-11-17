@@ -13,7 +13,6 @@ import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 //
 // Mobx
-import { toJS } from "mobx";
 import { observer } from "mobx-react";
 
 /** PROPS

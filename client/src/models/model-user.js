@@ -126,7 +126,6 @@ ModelUser.addToSchedule = async function (
       }), // <-- object uses ES6 syntax.
     };
     const reply = await fetch(endpoint, payload);
-    const result = await reply.json();
   } catch (e) {
     console.error(`From ModelUser.addToSchedule --> ${e}`);
   }
@@ -352,7 +351,6 @@ ModelUser.getAvailableDayTimes = function (value) {
           // will remain looking something like this: 2020-02-21T16:00:00.0000Z
           moment(time).format("LT")
         );
-
       } else if (value === "Saturday" || value === "Sunday") {
         this.selectedDaySchedule = null;
       }
@@ -460,8 +458,6 @@ ModelUser.getUserBookings = async function (sid) {
   const endpoint = `${config.api}/users/bookings`;
   const payload = { method: "GET" };
   const reply = await fetch(endpoint, payload);
-  const result = await reply.json();
-
 };
 
 ModelUser.getSid = async function (firstName, lastName) {
