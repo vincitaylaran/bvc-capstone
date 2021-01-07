@@ -1,29 +1,33 @@
-const bodyparser = require("body-parser");
-const express = require("express");
-const mongoose = require("mongoose");
+const bodyparser = require("body-parser")
+const express = require("express")
+const mongoose = require("mongoose")
 
 // Config.
-const config = require("../config/config.json");
+const config = require("../config/config")
 
 // Importing Booking model.
-const Booking = require("../models/booking.model.js");
-const User = require("../models/user.model.js");
-const Service = require("../models/service.model");
+const Booking = require("../models/booking.model.js")
+const User = require("../models/user.model.js")
+const Service = require("../models/service.model")
 
 // Modules
-const jwt = require("../modules/token.js");
-const mongoconfig = require("../modules/mongo-config.js");
-const moment = require("../modules/moment.js");
+const jwt = require("../modules/token.js")
+const mongoconfig = require("../modules/mongo-config.js")
+const moment = require("../modules/moment.js")
 
 // Get connection details.
-const URI = mongoconfig.getConnectionUri();
-const serverError = {success: false,message:"There was an error on the server and the request could not be completed."};
+const URI = mongoconfig.getConnectionUri()
+const serverError = {
+  success: false,
+  message:
+    "There was an error on the server and the request could not be completed.",
+}
 
 module.exports = function () {
-  var api = express.Router();
+  var api = express.Router()
 
-  api.use(bodyparser.urlencoded({ extended: true }));
-  api.use(bodyparser.json());
+  api.use(bodyparser.urlencoded({ extended: true }))
+  api.use(bodyparser.json())
 
   //
   // Endpoint for getting all bookings. If you're passing an array of services to the
@@ -34,50 +38,50 @@ module.exports = function () {
     try {
       //
       // Assigning the array of services to a variable.
-      const services = request.query.services;
-      const isQueryStringEmpty = Object.keys(request.query).length === 0;
+      const services = request.query.services
+      const isQueryStringEmpty = Object.keys(request.query).length === 0
 
-      const token = request.headers.authorization;
+      const token = request.headers.authorization
 
       // Validate token first to save resources.
       if (jwt.isValidToken(token, config.LoginSecret)) {
         // By default, all users has dashboard, we will not check.
         //const userToken = Token.getPayload(token);
 
-        let userBookings = [];
+        let userBookings = []
 
         //
         // Making a connection to the MongoDB Atlas database.
         mongoose.connect(URI, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
-        });
+        })
 
-        const connection = mongoose.connection;
+        const connection = mongoose.connection
 
         //
         // Make a connection to Atlas cluster.
         connection.once("open", function () {
-          console.log("MongoDB database connection established successfully.");
-        });
+          console.log("MongoDB database connection established successfully.")
+        })
 
         //
         // Check if the endpoint was called with any query strings.
         if (isQueryStringEmpty) {
           //
           // Get all of the bookings in the 'booking' collection.
-          userBookings = await Booking.find({});
+          userBookings = await Booking.find({})
 
           const json = resHeader(
             true,
             token,
             "Get was successful.",
             userBookings
-          );
+          )
 
           //
           // Returns all bookings.
-          response.status(200).send(json);
+          response.status(200).send(json)
         } else {
           //
           // Get all of the MATCHING services that were passed as a query string array.
@@ -88,33 +92,33 @@ module.exports = function () {
                 token,
                 "User has no services associated to them.",
                 []
-              );
-              response.status(418).send(json);
+              )
+              response.status(418).send(json)
             } else {
               services.forEach((service) => {
                 bookings.forEach((booking) => {
                   if (service === booking.service_sid) {
-                    userBookings.push(booking);
+                    userBookings.push(booking)
                   }
-                });
-              });
+                })
+              })
 
               const json = resHeader(
                 true,
                 token,
                 `Get was successful. User has ${userBookings.length} services associated with them.`,
                 userBookings
-              );
+              )
 
-              response.status(200).send(json);
+              response.status(200).send(json)
             }
-          });
+          })
         }
       }
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  });
+  })
 
   //
   // Returns the start times and end times of a specific user.
@@ -125,35 +129,35 @@ module.exports = function () {
       mongoose.connect(URI, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-      });
+      })
 
-      const connection = mongoose.connection;
+      const connection = mongoose.connection
 
       //
       // Make a connection to Atlas cluster.
       connection.once("open", function () {
-        console.log("MongoDB database connection established successfully.");
-      });
+        console.log("MongoDB database connection established successfully.")
+      })
 
-      const tutorSid = request.query.tutor_sid;
-      const serviceSid = request.query.service_sid;
-      let userId = -1; // Placeholder value
+      const tutorSid = request.query.tutor_sid
+      const serviceSid = request.query.service_sid
+      let userId = -1 // Placeholder value
 
       await User.findOne({ sid: tutorSid }, (err, user) => {
         if (err) {
           response
             .status(400)
-            .send(JSON.stringify({ success: false, message: "Unknown SID." }));
+            .send(JSON.stringify({ success: false, message: "Unknown SID." }))
         } else {
-          userId = user._id;
+          userId = user._id
         }
-      });
+      })
 
       await Booking.find(
         { tutor_sid: tutorSid, service_sid: serviceSid },
         (err, bookings) => {
           if (err) {
-            response.send(JSON.stringify({ success: false, message: err }));
+            response.send(JSON.stringify({ success: false, message: err }))
           } else {
             const bookingTimes = bookings.map((booking) => {
               return {
@@ -161,19 +165,19 @@ module.exports = function () {
                 endTime: booking.end,
                 date: booking.date,
                 day: booking.day,
-              };
-            });
+              }
+            })
 
             response.send(
               JSON.stringify({ success: true, result: bookingTimes })
-            );
+            )
           }
         }
-      );
+      )
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  });
+  })
 
   /**
    * The rest of methods (POST, PUT and DELETE) should have all the information enclosed in the message body in the JSON format.
@@ -183,76 +187,86 @@ module.exports = function () {
   // Endpoint for creating a booking.
   // TODO: update this endpoint after scheduler component is functional. Check for valid JWT.
   api.post("/p/booking", function (request, response) {
-    (async function () {
+    ;(async function () {
       try {
         //
         // Making a connection to the MongoDB Atlas database.
         mongoose.connect(URI, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
-        });
+        })
 
-        const connection = mongoose.connection;
+        const connection = mongoose.connection
 
         //
         // Make a connection to Atlas cluster.
         connection.once("open", function () {
-          console.log("MongoDB database connection established successfully.");
-        });
+          console.log("MongoDB database connection established successfully.")
+        })
 
         //
         // Create payload.
-        
+
         // Service details
-        const service_sid = request.body.service_sid;
-        const book_type = request.body.book_type;
+        const service_sid = request.body.service_sid
+        const book_type = request.body.book_type
 
         //Tutor details
-        const tutor_sid = request.body.tutor_sid;
-        const tutor_name = request.body.tutor_name;
-        
+        const tutor_sid = request.body.tutor_sid
+        const tutor_name = request.body.tutor_name
+
         // Booking details
         // The mongoose.Types.ObjectId() generates a mongoDB object ID.
-        const _id = new mongoose.Types.ObjectId();
-        let start = request.body.start;
-        let date = request.body.date;
-        let month = request.body.month;
-        let day = request.body.day;
+        const _id = new mongoose.Types.ObjectId()
+        let start = request.body.start
+        let date = request.body.date
+        let month = request.body.month
+        let day = request.body.day
         // Since this api endpoint is for booking, we can hardcode this.
-        const status = "waiting"; 
+        const status = "waiting"
 
         // For walk-in, date values are current date.
-        const dateNow = new Date();
-        if (book_type.replace("-","") === "walkin") {
-          date = dateNow.getDate();
-          month = moment.getMonthName(dateNow);
-          start = moment.getClockTime(dateNow);
-          day = moment.getDayName(dateNow);
+        const dateNow = new Date()
+        if (book_type.replace("-", "") === "walkin") {
+          date = dateNow.getDate()
+          month = moment.getMonthName(dateNow)
+          start = moment.getClockTime(dateNow)
+          day = moment.getDayName(dateNow)
         }
         // Millis when booking status was change (created).
-        const status_time = dateNow.getTime(); 
-        const book_time = dateNow.getTime(); 
-        
+        const status_time = dateNow.getTime()
+        const book_time = dateNow.getTime()
+
         // Dynamic fields
-        const fields = (request.body.fields
+        const fields = request.body.fields
           ? JSON.parse(request.body.fields)
-          : []);
+          : []
 
         // Tutee details
-        const tutee_name = fields.find(f => {return f.code === "Name"}).value;
-        const email = fields.find(f => {return f.code === "Email"}).value;
-        const tuteeId = fields.find(f => {return f.code === "ID"}).value;
-        const phone = fields.find(f => {return f.code === "Phone"}).value;
-        const notes = fields.find(f => {return f.code === "Notes"}).value;
-        
-        let tutor_id;
+        const tutee_name = fields.find((f) => {
+          return f.code === "Name"
+        }).value
+        const email = fields.find((f) => {
+          return f.code === "Email"
+        }).value
+        const tuteeId = fields.find((f) => {
+          return f.code === "ID"
+        }).value
+        const phone = fields.find((f) => {
+          return f.code === "Phone"
+        }).value
+        const notes = fields.find((f) => {
+          return f.code === "Notes"
+        }).value
+
+        let tutor_id
         if (tutor_sid.trim()) {
           const tutor = await User.findOne({ sid: tutor_sid }, (err, user) => {
             if (err) {
-              response.send({ success: false, message: err });
+              response.send({ success: false, message: err })
             }
-          });
-          tutor_id = tutor._id;
+          })
+          tutor_id = tutor._id
         }
 
         //
@@ -274,13 +288,13 @@ module.exports = function () {
           day: day,
           status_time: status_time,
           book_time: book_time,
-          fields: fields
-        });
+          fields: fields,
+        })
 
         //
         // Insert the request body to the 'bookings' collection. If you look at the schema
         // for 'Book' the default collection is 'bookings'.
-        await book.save();
+        await book.save()
 
         /*
         // JWT retrieved from query string here!
@@ -293,17 +307,17 @@ module.exports = function () {
         const json = {
           success: true,
           message: "Booking successful",
-        };
+        }
 
         //
         // A server response of 200 means that the POST request was successful.
-        response.status(200).send(JSON.stringify(json));
+        response.status(200).send(JSON.stringify(json))
       } catch (error) {
-        console.error("Error in booking", error);
-        response.status(200).send(JSON.stringify(serverError));
+        console.error("Error in booking", error)
+        response.status(200).send(JSON.stringify(serverError))
       }
-    })();
-  });
+    })()
+  })
 
   //
   // Endpoint for deleting a booking.
@@ -311,10 +325,10 @@ module.exports = function () {
     try {
       //
       // Store the 'book_id' value in the query string to a variable.
-      const bookingId = request.query.book_id;
+      const bookingId = request.query.book_id
       //
       // Store the 'token' value in the request body to a variable.
-      const token = request.body.token;
+      const token = request.body.token
 
       if (jwt.isValidToken(token, config.LoginSecret)) {
         //
@@ -322,15 +336,15 @@ module.exports = function () {
         mongoose.connect(URI, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
-        });
+        })
 
-        const connection = mongoose.connection;
+        const connection = mongoose.connection
 
         //
         // Make a connection to Atlas cluster.
         connection.once("open", function () {
-          console.log("MongoDB database connection established successfully.");
-        });
+          console.log("MongoDB database connection established successfully.")
+        })
 
         await Booking.findOneAndDelete(
           { _id: bookingId },
@@ -341,30 +355,30 @@ module.exports = function () {
                 false,
                 token,
                 "The booking ID provided could not be found."
-              );
+              )
 
-              response.status(404).send(json);
+              response.status(404).send(json)
             } else {
               const json = resHeader(
                 true,
                 token,
                 "Delete was successful",
                 booking
-              );
+              )
 
-              response.status(200).send(json);
+              response.status(200).send(json)
             }
           }
-        );
+        )
       } else {
-        const json = resHeader(false, token, "Access Denied");
+        const json = resHeader(false, token, "Access Denied")
 
-        response.status(401).send(json);
+        response.status(401).send(json)
       }
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  });
+  })
 
   //
   // Endpoint for updating a tutee's status from 'waiting' to 'ongoing' and vice versa.
@@ -372,11 +386,11 @@ module.exports = function () {
     try {
       //
       // Assign the query string 'book_id' to a variable.
-      const bookId = request.query.book_id;
-      const booking = await Booking.findById(bookId);
+      const bookId = request.query.book_id
+      const booking = await Booking.findById(bookId)
 
-      const isOngoing = booking.status === "waiting" ? "ongoing" : "waiting";
-      const token = request.body.token;
+      const isOngoing = booking.status === "waiting" ? "ongoing" : "waiting"
+      const token = request.body.token
 
       if (jwt.isValidToken(token, config.LoginSecret)) {
         //
@@ -384,15 +398,15 @@ module.exports = function () {
         mongoose.connect(URI, {
           useNewUrlParser: true,
           useUnifiedTopology: true,
-        });
+        })
 
-        const connection = mongoose.connection;
+        const connection = mongoose.connection
 
         //
         // Make a connection to Atlas cluster.
         connection.once("open", function () {
-          console.log("MongoDB database connection established successfully.");
-        });
+          console.log("MongoDB database connection established successfully.")
+        })
 
         //
         // Find a document with a matching ID, if the status of the booking is 'ongoing'
@@ -406,80 +420,77 @@ module.exports = function () {
                 false,
                 token,
                 "There are no bookings with that ID."
-              );
+              )
 
-              response.status(404).send(json);
+              response.status(404).send(json)
             } else {
               const json = resHeader(
                 true,
                 token,
                 "Status update was succesful",
                 booking
-              );
+              )
 
-              response.status(200).send(json);
+              response.status(200).send(json)
             }
           }
-        );
+        )
       } else {
-        const json = resHeader(false, token, "Invalid token.");
-        response.status(401).send(json);
+        const json = resHeader(false, token, "Invalid token.")
+        response.status(401).send(json)
       }
     } catch (e) {
-      console.error(e);
+      console.error(e)
     }
-  });
+  })
 
-  
   // Endpoint for making a booking.
-  api.post("/booking/create");
-  
+  api.post("/booking/create")
+
   api.get("/p/servicefields", function (request, response) {
-    (async function () {
+    ;(async function () {
       try {
         // Look from code from services table.
-        const sid = request.query.s;
-      
+        const sid = request.query.s
+
         if (sid) {
-          
           // Establish database connection.
           mongoose.connect(URI, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
-          });
+            useUnifiedTopology: true,
+          })
 
-          const lssService = await Service
-            .findOne({ sid: sid })
-            .select("sid desc colour fields -_id");
+          const lssService = await Service.findOne({ sid: sid }).select(
+            "sid desc colour fields -_id"
+          )
 
           const json = {
             success: true,
             message: "success",
-            result: lssService
-          };
-  
-          response.status(200).send(JSON.stringify(json));
+            result: lssService,
+          }
+
+          response.status(200).send(JSON.stringify(json))
         } else {
           const json = {
             success: false,
             message: "Invalid parameters.",
-          };
-  
-          response.status(200).send(JSON.stringify(json));
-        }
-      }
-      catch(err) {
-        console.error("Error getting service fields (p)", err);
-        response.status(401).send(serverError);
-      }
-    })();
-  });
+          }
 
-  return api;
-};
+          response.status(200).send(JSON.stringify(json))
+        }
+      } catch (err) {
+        console.error("Error getting service fields (p)", err)
+        response.status(401).send(serverError)
+      }
+    })()
+  })
+
+  return api
+}
 
 //
 // For creating an object send to back to the client. Uses ES6 syntax.
 function resHeader(success, token, message, result = "") {
-  return JSON.stringify({ success, token, message, result });
+  return JSON.stringify({ success, token, message, result })
 }
