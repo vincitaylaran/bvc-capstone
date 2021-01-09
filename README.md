@@ -4,7 +4,7 @@
 
 - [Vinci's Contributions](#contributions)
   - [Scheduler](#scheduler)
-  - [Appointments Queue](<#appointments\ queue>)
+  - [Appointments Queue](<#appointments\queue>)
 - [Demo](#demo)
 - [Credits](#credits)
 
