@@ -43,6 +43,6 @@
 - **Dipti Gogoi**: Front-end developer
 - **Dylan Blair**: Front-end developer
 - **Emmanuel Manarang**: Front-end developer, back-end developer
-- **Ismael Mamorisoa**: Front-end developer
+- **[Ismael Mamorisoa](https://github.com/IsmaelMamo)**: Front-end developer
 - **Sarah Dion**: Front-end developer
 - **Vinci Taylaran**: Front-end developer, back-end developer
