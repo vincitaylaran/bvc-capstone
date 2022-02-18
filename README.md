@@ -39,9 +39,8 @@
 ![Your appointment has been set!](gifs/4_check_appt.gif)
 
 # Credits
-
 - **Dipti Gogoi**: Front-end developer
-- **Dylan Blair**: Front-end developer
+- **[@Dylandbl](https://github.com/Dylandbl)**: Front-end developer
 - **Emmanuel Manarang**: Front-end developer, back-end developer
 - **[Ismael Mamorisoa](https://github.com/IsmaelMamo)**: Front-end developer
 - **Sarah Dion**: Front-end developer
